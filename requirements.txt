@@ -1,0 +1,5 @@
+isbnlib
+requests
+lxml
+requests-cache
+pyyaml

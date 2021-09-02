@@ -1,0 +1,56 @@
+#+TITLE: Export Books from an Amazon Wishlist to YAML
+
+I didn't test it in a while so it's possible it won't work with the current Amazon wishlist page. I only tested it (a while ago) on the German domain.
+
+I used it in order to back up my wishlist and have it in another place that is not Amazon.
+
+* Setup
+
+Install packages using requirements file, version are not set, have fun resolving issues.
+
+* Usage
+
+- Backup current lists if you plan to override them, the page might have changed and problems might occur.
+- Save Amazon wishlist as HTML page.
+- Run the following command
+#+begin_src sh
+./grab_books_from_amazon_wishlist.py books.html books.yaml "historiography-books"
+#+end_src
+
+Result:
+#+begin_src yaml
+historiography-books:
+-   authors:
+    - Isaiah Berlin
+    isbn: 0691156107
+    link: https://www.amazon.de/-/en/dp/0691156107
+    title: Against the Current - Essays in the History of Ideas - Second Edition
+-   authors:
+    - Eric Foner
+    isbn: 0809097052
+    link: https://www.amazon.de/-/en/dp/0809097052
+    title: Who Owns History? - Rethinking the Past in a Changing World
+-   authors:
+    - John Lewis Gaddis
+    isbn: 0195171578
+    link: https://www.amazon.de/-/en/dp/0195171578
+    title: The Landscape of History - How Historians Map the Past
+-   authors:
+    - Adam Budd
+    isbn: 0415458870
+    link: https://www.amazon.de/-/en/dp/0415458870
+    title: The Modern Historiography Reader - Western Sources
+-   authors:
+    - John H. Arnold
+    isbn: '1509532560'
+    link: https://www.amazon.de/-/en/dp/1509532560
+    title: What is Medieval History?
+-   authors:
+    - John H. Arnold
+    isbn: '1402768923'
+    link: https://www.amazon.de/-/en/dp/1402768923
+    title: History
+#+end_src
+
+As you can see the result isn't great, the ISBN can be a string or an int (not sure why I didn't fix it) and the order of properties is not easy to read.
+But it's better than nothing.
